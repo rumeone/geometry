@@ -1,6 +1,15 @@
 #include <stdio.h>
+#include "point.h"
 
-int main(void) {
-  printf("Hello World\n");
-  return 0;
+int main() {
+
+FILE *f=fopen("Print", "w");
+circle c;
+
+   print_cirlce(&c, f);
+
+fclose(f);
+    printf("\n");
+
+    return 0;
 }
