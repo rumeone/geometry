@@ -10,7 +10,7 @@ typedef point {
 typedef circle {
   point_t A;
   int r;
-} Circle;
+} circle;
 
-void enter_coordinate_circle(Circle* c);
-void print_circle(Circle *c, File *f);
+void enter_coordinate_circle(circle* c);
+void print_circle(circle *c, FILE *f);
