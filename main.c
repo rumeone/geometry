@@ -3,13 +3,15 @@
 
 int main() {
 
-FILE *f=fopen("Print", "w");
-circle c;
+ FILE *f=fopen("Print", "w");
+ circle c;
 
-   print_cirlce(&c, f);
+ enter_coordinate_circle(&c);
 
-fclose(f);
-    printf("\n");
+ print_circle(&c, f);
 
-    return 0;
+ fclose(f);
+ printf("\n");
+
+return 0;
 }
