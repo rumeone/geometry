@@ -1,2 +1,2 @@
 result: main.c
-	gcc -Wall -o result main.c circle.c -lm
+	gcc -Wall -o rezult main.c circle.c triangle.c -lm
