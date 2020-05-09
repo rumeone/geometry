@@ -21,7 +21,7 @@ void print_circle(circle *c, FILE *f);
 float perimeter_circle(circle* c, FILE* f);
 float area_circle(circle* c, FILE* f);
 void enter_triangle_coordinate(triangle* t);
-void print_triangle(triangle* t, FILE* f);
+int print_triangle(triangle* t, FILE* f);
 int check_triangle(triangle* t, FILE* f);
 float perimeter_triangle(triangle* t, FILE* f);
 float area_triangle(triangle* t, FILE* f);

@@ -14,30 +14,31 @@ void enter_triangle_coordinate(triangle* t)
     t->T[4].y = t->T[1].y;
 }
 
-void print_triangle(triangle* t, FILE* f)
+int print_triangle(triangle* t, FILE* f)
 {
-    fprintf(f, "Triangle(");
+    fprintf(f, "Triangle ( ");
     int c = check_triangle(t, f);
     if (c == 0) {
         for (int i = 1; i <= 3; i++) {
-            fprintf(f, "(%d,%d", t->T[i].x, t->T[i].y);
+            fprintf(f, "(%d,%d)", t->T[i].x, t->T[i].y);
             if (i < 4) {
-                fprintf(f, ")");
+                fprintf(f, " ");
             }
         }
-        fprintf(f, ")\n");
+        fprintf(f, ")");
 
-        printf("Triangle(");
+        printf("Triangle ( ");
         for (int i = 1; i <= 3; ++i) {
-            printf("(%d;%d)", t->T[i].x, t->T[i].y);
+            printf("(%d,%d)", t->T[i].x, t->T[i].y);
             if (i < 4) {
-                printf(", ");
+                printf(" ");
             }
         }
     } else {
         printf("Error: invalid triangle\n");
     }
     printf(")\n");
+    return c;
 }
 
 int check_triangle(triangle* t, FILE* f)
@@ -49,12 +50,8 @@ int check_triangle(triangle* t, FILE* f)
     c = sqrt(((t->T[3].x - t->T[2].x) * (t->T[3].x - t->T[2].x)) + ((t->T[3].y - t->T[2].y) * (t->T[3].y - t->T[2].y)));
 
     if ((a + b > c) || (a + c > b) || (c + b > a)) {
-        //printf("The triangle is set correctly\n");
-        //fprintf(f, "The triangle is set correctly\n");
         return 0;
     } else {
-        //printf("Error: invalid triangle\n");
-        //fprintf(f, "Error: invalid triangle\n");
         return -1;
     }
 }
