@@ -6,3 +6,5 @@
 !.clang-format
 !*h
 !src
+!test
+!thirdparty
