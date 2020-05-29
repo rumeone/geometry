@@ -10,11 +10,12 @@ int main()
     circle c1;
 
     enter_coordinate_circle(&c);
-    enter_coordinate_circle(&c1);
 
     print_circle(&c, f);
     perimeter_circle(&c, f);
     area_circle(&c, f);
+
+    enter_coordinate_circle(&c1);
     
     inter_cir(&c, &c1, f);
  
