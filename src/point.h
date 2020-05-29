@@ -18,5 +18,5 @@ void enter_coordinate_circle(circle* c);
 void print_circle(circle *c, FILE *f);
 float perimeter_circle(circle* c, FILE* f);
 float area_circle(circle* c, FILE* f);
-
+int inter_cir(circle* c1, circle *c2, FILE *f);
 

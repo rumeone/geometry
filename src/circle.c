@@ -17,15 +17,28 @@ void print_circle(circle* c, FILE* f)
 
 float perimeter_circle(circle* c, FILE* f)
 {
-    float P = 2 * 3.14 * c->r;
+    float P = 2 * M_PI * c->r;
     printf("Circle perimeter = %.2f\n", P);
     fprintf(f, "Circle perimeter = %.2f\n", P);
     return P;
 }
 float area_circle(circle* c, FILE* f)
 {
-    float S = 3.14 * c->r * c->r;
+    float S = M_PI * c->r * c->r;
     printf("Circle area = %.2f\n", S);
     fprintf(f, "Circle area = %.2f\n", S);
     return S;
+}
+
+int inter_cir(circle* c1, circle *c2, FILE *f) {
+    if (!c1 || !c2) {
+        return -1;
+    }
+    double distance = sqrt(pow(c2->C.x - c1->C.x, 2) + pow(c2->C.y - c1->C.y, 2));
+    if (distance <= (c1->r + c2->r)) {
+        printf("Окружности пересекатся\n");
+        fprintf(f, "Окружности пересекаются\n");
+        return 1;
+    }
+    return -1;
 }
